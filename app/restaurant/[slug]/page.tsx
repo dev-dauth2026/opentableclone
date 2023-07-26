@@ -1,6 +1,7 @@
 import NavBar from '@/app/components/NavBar';
 import Link from 'next/link'
 import Header from './components/Header';
+import RestaurantNavBar from './components/RestaurantNavBar';
 const RestaurantDetails=()=>{
     return(
         <main className="bg-gray-100 min-h-screen w-screen">
@@ -12,10 +13,7 @@ const RestaurantDetails=()=>{
     <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
       <div className="bg-white w-[70%] rounded p-3 shadow">
         {/* RESAURANT NAVBAR */}
-        <nav className="flex text-reg border-b pb-2">
-        <Link href="/restaurant/milestones-grill" className="mr-7"> Overview </Link>
-          <Link href="/restaurant/milestones-grill/menu"className="mr-7"> Menu </Link>
-        </nav>
+       <RestaurantNavBar/>
         {/* RESAURANT NAVBAR */} {/* TITLE */}
         <div className="mt-4 border-b pb-6">
           <h1 className="font-bold text-6xl">Milesstone Grill</h1>
