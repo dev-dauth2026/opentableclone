@@ -3,7 +3,7 @@ import Link from "next/link";
 const RestaurantCard=()=>{
     return(
         <div className="border-b flex pb-5">
-            <Link href='/restaurant/milestones'>
+        
         <img
           src="https://images.otstatic.com/prod1/49153814/2/medium.jpg"
           alt=""
@@ -23,10 +23,10 @@ const RestaurantCard=()=>{
             </div>
           </div>
           <div className="text-red-600">
-            <a href="">View more information</a>
+            <Link href='/restaurant/milestones'>View more information</Link>
           </div>
         </div>
-        </Link>
+     
       </div>
     )
 }
