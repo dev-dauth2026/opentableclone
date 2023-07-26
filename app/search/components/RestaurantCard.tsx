@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 const RestaurantCard=()=>{
     return(
         <div className="border-b flex pb-5">
+            <Link href='/restaurant/milestones'>
         <img
           src="https://images.otstatic.com/prod1/49153814/2/medium.jpg"
           alt=""
@@ -23,6 +26,7 @@ const RestaurantCard=()=>{
             <a href="">View more information</a>
           </div>
         </div>
+        </Link>
       </div>
     )
 }
