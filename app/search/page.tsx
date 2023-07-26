@@ -1,4 +1,4 @@
-export default SearchPage=()=>{
+const SearchPage=()=>{
     return(
         <main className="bg-gray-100 min-h-screen w-screen">
   <main className="max-w-screen-2xl m-auto bg-white">
@@ -103,3 +103,4 @@ export default SearchPage=()=>{
 
     )
 }
+export default SearchPage;
