@@ -9,9 +9,7 @@ export default function Menu() {
         <h1 className="font-bold text-4xl">Menu</h1>
       </div>
       <div className="flex flex-wrap justify-between">
-        {/* MENU CARD */}
        <MenuCard/>
-        {/* MENU CARD */}
       </div>
     </div>
   </main>
