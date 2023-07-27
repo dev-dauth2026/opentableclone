@@ -1,5 +1,3 @@
-
-
 export default function Rating() {
   return (
     <div className="flex items-end">
