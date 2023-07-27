@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Header from './components/Header';
 import RestaurantNavBar from './components/RestaurantNavBar';
 import Title from './components/Title';
+import Rating from './components/Rating';
 const RestaurantDetails=()=>{
     return(
         <main className="bg-gray-100 min-h-screen w-screen">
@@ -17,15 +18,7 @@ const RestaurantDetails=()=>{
        <RestaurantNavBar/>
       <Title/>
         {/* RATING */}
-        <div className="flex items-end">
-          <div className="ratings mt-2 flex items-center">
-            <p>*****</p>
-            <p className="text-reg ml-3">4.9</p>
-          </div>
-          <div>
-            <p className="text-reg ml-4">600 Reviews</p>
-          </div>
-        </div>
+        <Rating/>
         {/* RATING */} {/* DESCRIPTION */}
         <div className="mt-4">
           <p className="text-lg font-light">
