@@ -40,11 +40,10 @@ const restaurants= await fetchRestaurants();
       <div className="py-3 px-36 mt-10 flex flex-wrap justify-center">
        {
         restaurants.map((restaurant)=>{
-          return    <RestaurantCard restaurant={restaurant}/>
+          return <RestaurantCard restaurant={restaurant} />
         })
        }
     
-     
       </div>
       {/* CARDS */}
     </main>

@@ -8,12 +8,12 @@ interface Props{
 const RestaurantCard=({restaurant}:Props)=>{
     return(
         <div
-        className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer" key={restaurant.id}
+        className="w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer text-black" key={restaurant.id}
       >
       <Link href={`/restaurant/${restaurant.slug}`}>
         <img
           src={restaurant.main_image}
-          alt=""
+          alt={restaurant.slug}
           className="w-full h-36"
         />
         <div className="p-1">
