@@ -1,11 +1,12 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import AuthModalInputs from "./AuthModalInputs";
+import useAuth from "@/hooks/useAuth";
+import { AuthenticationContext } from "../context/AuthContext";
+import { CircularProgress } from "@mui/material";
 
 const style = {
   position: "absolute" as "absolute",
@@ -19,9 +20,13 @@ const style = {
 };
 
 export default function AuthModal({ isSignin }: { isSignin: boolean }) {
+  const { error, loading, data, setAuthState } = useContext(
+    AuthenticationContext
+  );
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { signin } = useAuth();
 
   const renderContent = (signinContent: string, signupContent: string) => {
     return isSignin ? signinContent : signupContent;
@@ -62,6 +67,12 @@ export default function AuthModal({ isSignin }: { isSignin: boolean }) {
     }
     return setDisabled(true);
   }, [inputs]);
+
+  const handleClick = () => {
+    if (isSignin) {
+      signin({ email: inputs.email, password: inputs.password });
+    }
+  };
   return (
     <div className="text-black">
       <button
@@ -81,32 +92,40 @@ export default function AuthModal({ isSignin }: { isSignin: boolean }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div className="p-2 h-[600px]">
-            <div className="uppercase font-bold text-center pb-2 border-b mb-2">
-              <p className="text-sm text-black">
-                {renderContent("Sign In", "Create Account")}
-              </p>
+          {loading ? (
+            <div className="px-5 py-25 h-[600px] flex justify-center">
+              <CircularProgress />
             </div>
-            <div className=" m-auto ">
-              <h2 className="text-2xl font-light text-black text-center">
-                {renderContent(
-                  "Login Into Your Account",
-                  "Create Your OpenTable Account"
-                )}
-              </h2>
-              <AuthModalInputs
-                inputs={inputs}
-                handleChangeInput={handleChangeInput}
-                isSignin={isSignin}
-              />
-              <button
-                className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400"
-                disabled={disabled}
-              >
-                {renderContent("Sign In", "Create Account")}
-              </button>
+          ) : (
+            <div className="p-2 h-[600px]">
+              <div className="uppercase font-bold text-center pb-2 border-b mb-2">
+                <p className="text-sm text-black">
+                  <h1>{error}</h1>
+                  {renderContent("Sign In", "Create Account")}
+                </p>
+              </div>
+              <div className=" m-auto ">
+                <h2 className="text-2xl font-light text-black text-center">
+                  {renderContent(
+                    "Login Into Your Account",
+                    "Create Your OpenTable Account"
+                  )}
+                </h2>
+                <AuthModalInputs
+                  inputs={inputs}
+                  handleChangeInput={handleChangeInput}
+                  isSignin={isSignin}
+                />
+                <button
+                  className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400"
+                  disabled={disabled}
+                  onClick={handleClick}
+                >
+                  {renderContent("Sign In", "Create Account")}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </Box>
       </Modal>
     </div>
