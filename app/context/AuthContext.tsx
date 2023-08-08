@@ -32,7 +32,7 @@ export default function AuthContext({
   const [authState, setAuthState] = useState<State>({
     loading: false,
     data: null,
-    error: "this is a string error",
+    error: null,
   });
 
   return (
