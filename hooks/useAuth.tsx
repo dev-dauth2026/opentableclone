@@ -1,6 +1,7 @@
 // Import required modules and dependencies
 import { AuthenticationContext } from "@/app/context/AuthContext"; // Import the AuthenticationContext from a specific location
 import axios from "axios"; // Import axios for making HTTP requests
+import { getCookie } from "cookies-next";
 import { useContext } from "react"; // Import useContext for accessing context in functional components
 
 // Custom hook for authentication actions
