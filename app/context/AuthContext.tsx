@@ -43,7 +43,7 @@ export default function AuthContext({
 }) {
   // State to manage authentication-related data
   const [authState, setAuthState] = useState<State>({
-    loading: false,
+    loading: true,
     data: null,
     error: null,
   });
