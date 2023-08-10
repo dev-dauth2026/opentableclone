@@ -49,10 +49,4 @@ Conclude the course by creating a comprehensive availability and scheduling syst
 - Prisma
 - Postgres
 
-We're excited to embark on this journey of building powerful web applications with you. Let's get started!
-
-**Note:** This course assumes a certain level of familiarity with basic web development concepts, JavaScript, and React. If you're new to these technologies, it's recommended to brush up on the fundamentals before diving into this course.
-
-If you encounter any issues, have questions, or want to share your progress, feel free to reach out to the course instructors or community for assistance.
-
 Happy coding! 🚀
