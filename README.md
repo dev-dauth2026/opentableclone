@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS 13 Course: Building a Restaurant Reservation Application
+
+Welcome to the NextJS 13 course, where we'll delve into the exciting features of NextJS 13 and learn how to build a restaurant reservation application from scratch. This higher-level framework, built on top of React, will revolutionize your approach to web application development.
+
+## Course Overview
+
+In this course, we will explore the remarkable capabilities of NextJS 13 by creating a restaurant reservation application that allows users to view restaurants and reserve tables.
+
+### Topics Covered:
+
+1. **File System and Routing:**
+   Discover the power of NextJS 13's file system-based routing. Learn to create both static and dynamic routes effortlessly by defining files and folders.
+
+2. **Handling Application States:**
+   Learn how to effectively manage loading, error, not found, and success states within our application.
+
+3. **Rendering Modes and Components:**
+   Understand the nuances between server-side and client-side rendering modes for React components. Learn when to use each rendering mode for optimal performance.
+
+4. **Server-side NextJS:**
+   Dive into the server-side of NextJS. Set up a Postgres database and define models with Prisma (ORM). Fetch data from the database based on the component's requirements.
+
+5. **Authentication Implementation:**
+   Build authentication endpoints from scratch. Utilize middleware, hashers, and JSON web tokens to implement a robust authentication system.
+
+6. **Global State Management:**
+   Implement user data storage using the context API. Consuming the authentication endpoints, store user data globally for seamless application-wide accessibility.
+
+7. **Availability and Scheduling System:**
+   Conclude the course by creating a comprehensive availability and scheduling system for the application. Employ algorithms and logical thinking to achieve this complex functionality.
 
 ## Getting Started
 
-First, run the development server:
+Get ready to embark on a transformative learning journey with NextJS 13. By the end of this course, you'll have the skills to create dynamic, responsive, and feature-rich web applications using NextJS 13 and React.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Course Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The course is structured into modules that progressively build upon each other. Each module contains practical examples, hands-on exercises, and clear explanations to ensure a comprehensive learning experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Basic understanding of HTML, CSS, and JavaScript
+- Familiarity with React concepts is a plus but not mandatory
 
-## Learn More
+## Let's Begin!
 
-To learn more about Next.js, take a look at the following resources:
+With the power of NextJS 13 at your fingertips, you're about to discover a new realm of web application development. Let's dive in and start building the future of web applications!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Happy coding!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+_[Dauth Gurung]]_
