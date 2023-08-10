@@ -1,53 +1,58 @@
-# NextJS 13 Course: Building a Restaurant Reservation Application
+# NextJS Application Development Course
 
-Welcome to the NextJS 13 course, where we'll delve into the exciting features of NextJS 13 and learn how to build a restaurant reservation application from scratch. This higher-level framework, built on top of React, will revolutionize your approach to web application development.
+Welcome to the NextJS Application Development ! In this comprehensive application, I built powerful and performant web applications using NextJS 13, along with a variety of other technologies including Tailwind CSS, TypeScript, Prisma, and Postgres. I have included dynamic routes, manage application states, implement authentication, handle global state management, and even develop a complex availability and scheduling system. Let's dive in!
 
-## Course Overview
+## Table of Contents
 
-In this course, we will explore the remarkable capabilities of NextJS 13 by creating a restaurant reservation application that allows users to view restaurants and reserve tables.
+1. [File System and Routing](#file-system-and-routing)
+2. [Handling Application States](#handling-application-states)
+3. [Rendering Modes and Components](#rendering-modes-and-components)
+4. [Server-side NextJS](#server-side-nextjs)
+5. [Authentication Implementation](#authentication-implementation)
+6. [Global State Management](#global-state-management)
+7. [Availability and Scheduling System](#availability-and-scheduling-system)
 
-### Topics Covered:
+## 1. File System and Routing
 
-1. **File System and Routing:**
-   Discover the power of NextJS 13's file system-based routing. Learn to create both static and dynamic routes effortlessly by defining files and folders.
+Discover the power of NextJS 13's file system-based routing. I have created both static and dynamic routes effortlessly by defining files and folders.
 
-2. **Handling Application States:**
-   Learn how to effectively manage loading, error, not found, and success states within our application.
+## 2. Handling Application States
 
-3. **Rendering Modes and Components:**
-   Understand the nuances between server-side and client-side rendering modes for React components. Learn when to use each rendering mode for optimal performance.
+Effectively manage loading, error, not found, and success states within our application. Understand the best practices for creating smooth user experiences.
 
-4. **Server-side NextJS:**
-   Dive into the server-side of NextJS. Set up a Postgres database and define models with Prisma (ORM). Fetch data from the database based on the component's requirements.
+## 3. Rendering Modes and Components
 
-5. **Authentication Implementation:**
-   Build authentication endpoints from scratch. Utilize middleware, hashers, and JSON web tokens to implement a robust authentication system.
+Understand the nuances between server-side and client-side rendering modes for React components. Learn when to use each rendering mode for optimal performance and user experience.
 
-6. **Global State Management:**
-   Implement user data storage using the context API. Consuming the authentication endpoints, store user data globally for seamless application-wide accessibility.
+## 4. Server-side NextJS
 
-7. **Availability and Scheduling System:**
-   Conclude the course by creating a comprehensive availability and scheduling system for the application. Employ algorithms and logical thinking to achieve this complex functionality.
+Dive into the server-side of NextJS. Set up a Postgres database and define models with Prisma (ORM). Fetch data from the database based on the component's requirements to create dynamic and data-driven applications.
 
-## Getting Started
+## 5. Authentication Implementation
 
-Get ready to embark on a transformative learning journey with NextJS 13. By the end of this course, you'll have the skills to create dynamic, responsive, and feature-rich web applications using NextJS 13 and React.
+Build authentication endpoints from scratch. Utilize middleware, hashers, and JSON web tokens to implement a robust authentication system that enhances the security of your application.
 
-## Course Structure
+## 6. Global State Management
 
-The course is structured into modules that progressively build upon each other. Each module contains practical examples, hands-on exercises, and clear explanations to ensure a comprehensive learning experience.
+Implement user data storage using the context API. By consuming the authentication endpoints, store user data globally for seamless application-wide accessibility and state management.
 
-## Prerequisites
+## 7. Availability and Scheduling System
 
-- Basic understanding of HTML, CSS, and JavaScript
-- Familiarity with React concepts is a plus but not mandatory
+Conclude the course by creating a comprehensive availability and scheduling system for the application. Employ algorithms and logical thinking to achieve this complex functionality, integrating the concepts you've learned throughout the course.
 
-## Let's Begin!
+## Technologies Used
 
-With the power of NextJS 13 at your fingertips, you're about to discover a new realm of web application development. Let's dive in and start building the future of web applications!
+- JavaScript
+- NextJS 13
+- Tailwind CSS
+- TypeScript
+- Prisma
+- Postgres
 
-Happy coding!
+We're excited to embark on this journey of building powerful web applications with you. Let's get started!
 
----
+**Note:** This course assumes a certain level of familiarity with basic web development concepts, JavaScript, and React. If you're new to these technologies, it's recommended to brush up on the fundamentals before diving into this course.
 
-_[Dauth Gurung]]_
+If you encounter any issues, have questions, or want to share your progress, feel free to reach out to the course instructors or community for assistance.
+
+Happy coding! 🚀
