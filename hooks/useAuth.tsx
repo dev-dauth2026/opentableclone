@@ -1,7 +1,7 @@
 // Import required modules and dependencies
 import { AuthenticationContext } from "@/app/context/AuthContext"; // Import the AuthenticationContext from a specific location
 import axios from "axios"; // Import axios for making HTTP requests
-import { getCookie } from "cookies-next";
+import { deleteCookie, getCookie, removeCookies } from "cookies-next";
 import { useContext } from "react"; // Import useContext for accessing context in functional components
 
 // Custom hook for authentication actions
@@ -38,7 +38,6 @@ const useAuth = () => {
           password,
         }
       );
-      console.log(response);
 
       // Update authentication state with successful response
       setAuthState({
@@ -119,10 +118,19 @@ const useAuth = () => {
     }
   };
 
+  const signout = () => {
+    deleteCookie("jwt");
+    setAuthState({
+      data: null,
+      error: null,
+      loading: false,
+    });
+  };
   // Return the signin and signup functions as part of the hook's API
   return {
     signin,
     signup,
+    signout,
   };
 };
 
