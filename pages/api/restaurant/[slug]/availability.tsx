@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { times } from "@/data";
 import { PrismaClient } from "@prisma/client";
+import { table } from "console";
 
 const prisma = new PrismaClient();
 
@@ -44,5 +45,17 @@ export default async function handler(
     },
   });
 
-  return res.json({ searchTimes, bookings });
+  const bookingTablesObj: { [key: string]: { [key: number]: true } } = {};
+
+  bookings.forEach((booking) => {
+    bookingTablesObj[booking.booking_time.toISOString()] =
+      booking.tables.reduce((obj, table) => {
+        return {
+          ...obj,
+          [table.table_id]: true,
+        };
+      }, {});
+  });
+
+  return res.json({ searchTimes, bookings, bookingTablesObj });
 }
