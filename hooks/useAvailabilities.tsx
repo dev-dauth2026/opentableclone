@@ -13,7 +13,7 @@ export default function useAvalabilities() {
     time,
   }: {
     slug: string;
-    partySize: string;
+    partySize: number;
     day: string;
     time: string;
   }) => {
