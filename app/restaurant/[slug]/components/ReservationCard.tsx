@@ -1,6 +1,7 @@
 "use client";
 import { partySize as partySizes, times } from "@/data";
 import useAvalabilities from "@/hooks/useAvailabilities";
+import { CircularProgress } from "@mui/material";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
@@ -105,7 +106,7 @@ export default function ReservationCard({
           className="bg-red-600 rounded w-full px-4 text-white font-bold h-16"
           onClick={handleClick}
         >
-          Find a Time
+          {loading ? <CircularProgress color="inherit" /> : "Find a Time"}
         </button>
       </div>
     </div>
