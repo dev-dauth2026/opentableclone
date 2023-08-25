@@ -105,6 +105,7 @@ export default function ReservationCard({
         <button
           className="bg-red-600 rounded w-full px-4 text-white font-bold h-16"
           onClick={handleClick}
+          disabled={loading}
         >
           {loading ? <CircularProgress color="inherit" /> : "Find a Time"}
         </button>
