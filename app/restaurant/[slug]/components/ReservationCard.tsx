@@ -20,7 +20,7 @@ export default function ReservationCard({
   const [time, setTime] = useState(openTime);
   const [partySize, setPartySize] = useState("2");
   const [day, setDay] = useState(new Date().toISOString().split("T")[0]);
-
+  console.log("data", data);
   const handleChangeDate = (date: Date | null) => {
     if (date) {
       setDay(date.toISOString().split("T")[0]);
@@ -57,7 +57,7 @@ export default function ReservationCard({
     return timesWithinWindow;
   };
   return (
-    <div className="fixed w-[15%] bg-white rounded p-3 shadow">
+    <div className="fixed w-[15%]  bg-white rounded p-3 shadow">
       <div className="text-center border-b pb-2 font-bold">
         <h4 className="mr-7 text-lg">Make a Reservation</h4>
       </div>
@@ -82,7 +82,7 @@ export default function ReservationCard({
           <ReactDatePicker
             selected={selectedDate}
             onChange={handleChangeDate}
-            className="py-1 border-b font-light text-reg w-20"
+            className="py-3 border-b font-light text-reg w-20"
             dateFormat="MMMM d"
             wrapperClassName="w-[48%]"
           />
