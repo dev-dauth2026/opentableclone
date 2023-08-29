@@ -2,6 +2,7 @@
 import { partySize as partySizes, times } from "@/data";
 import useAvalabilities from "@/hooks/useAvailabilities";
 import { CircularProgress } from "@mui/material";
+import Link from "next/link";
 import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 
@@ -110,6 +111,25 @@ export default function ReservationCard({
           {loading ? <CircularProgress color="inherit" /> : "Find a Time"}
         </button>
       </div>
+      {data && data.length ? (
+        <div className="mt-4">
+          <p className="text-reg">Select a Time</p>
+          <div className="flex flex-wrap mt-2">
+            {data.map((time) => {
+              return time.available ? (
+                <Link
+                  href={`/reserve/${slug}?date=${day}T${time.time}&partySize=${partySize}`}
+                  className="bg-red-600 cursor-pointer p-2 w-24 text-center text-white mb-3 rounded mr-3"
+                >
+                  <p className="text-sm font-bold">{time.time}</p>
+                </Link>
+              ) : (
+                <p className="bg-gray-300 p-2 w-24 mb-rounded mr-3"></p>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
