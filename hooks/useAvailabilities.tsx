@@ -7,7 +7,6 @@ export default function useAvalabilities() {
   const [data, setData] = useState<
     { time: string; available: boolean }[] | null
   >(null);
-
   const fetchAvailabilities = async ({
     slug,
     partySize,
@@ -22,13 +21,16 @@ export default function useAvalabilities() {
     setLoading(true);
 
     try {
-      const response = await axios.get(`http://localhost:3000/api/restaurant`, {
-        params: {
-          day,
-          time,
-          partySize,
-        },
-      });
+      const response = await axios.get(
+        `http://localhost:3000/api/restaurant/${slug}/availability`,
+        {
+          params: {
+            day,
+            time,
+            partySize,
+          },
+        }
+      );
       setLoading(false);
       setData(response.data);
     } catch (error: any) {
