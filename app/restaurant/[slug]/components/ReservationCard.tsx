@@ -1,4 +1,5 @@
 "use client";
+import { convertToDisplayTime } from "@/app/utils/convertToDisplayTime";
 import { partySize as partySizes, times } from "@/data";
 import useAvalabilities from "@/hooks/useAvailabilities";
 import { CircularProgress } from "@mui/material";
@@ -120,7 +121,9 @@ export default function ReservationCard({
                   href={`/reserve/${slug}?date=${day}T${time.time}&partySize=${partySize}`}
                   className="bg-red-600 cursor-pointer p-2 w-24 text-center text-white mb-3 rounded mr-3"
                 >
-                  <p className="text-sm font-bold">{time.time}</p>
+                  <p className="text-sm font-bold">
+                    {convertToDisplayTime(time.time)}
+                  </p>
                 </Link>
               ) : (
                 <p className="bg-gray-300 p-3 w-24 mb-rounded mr-3 mb-3"></p>
