@@ -20,7 +20,6 @@ export default function ReservationCard({
   const [time, setTime] = useState(openTime);
   const [partySize, setPartySize] = useState("2");
   const [day, setDay] = useState(new Date().toISOString().split("T")[0]);
-  console.log("data", data);
   const handleChangeDate = (date: Date | null) => {
     if (date) {
       setDay(date.toISOString().split("T")[0]);
@@ -57,7 +56,7 @@ export default function ReservationCard({
     return timesWithinWindow;
   };
   return (
-    <div className="fixed w-[15%]  bg-white rounded p-3 shadow">
+    <div className=" bg-white rounded p-3 shadow">
       <div className="text-center border-b pb-2 font-bold">
         <h4 className="mr-7 text-lg">Make a Reservation</h4>
       </div>
@@ -124,7 +123,7 @@ export default function ReservationCard({
                   <p className="text-sm font-bold">{time.time}</p>
                 </Link>
               ) : (
-                <p className="bg-gray-300 p-2 w-24 mb-rounded mr-3"></p>
+                <p className="bg-gray-300 p-3 w-24 mb-rounded mr-3 mb-3"></p>
               );
             })}
           </div>
