@@ -1,3 +1,4 @@
+import { findAvailableTable } from "@/services/restaurant/findAvailableTables";
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -18,6 +19,11 @@ export default async function handler(
     where: {
       slug,
     },
+    select: {
+      tables: true,
+      open_time: true,
+      close_time: true,
+    },
   });
   if (!restaurant) {
     return res.status(400).json({
@@ -32,4 +38,31 @@ export default async function handler(
       errorMessage: "Restaurant is not open at that time",
     });
   }
+
+  const searchTimesWithTables = await findAvailableTable({
+    day,
+    time,
+    res,
+    restaurant,
+  });
+
+  if (!searchTimesWithTables) {
+    return res.status(400).json({
+      errorMessage: "Invalid data provided",
+    });
+  }
+
+  const searchTimeWithTables = searchTimesWithTables.find((t) => {
+    return t.date.toISOString() === new Date(`${day}T${time}`).toISOString();
+  });
+
+  if (!searchTimeWithTables) {
+    return res.status(400).json({
+      errorMessage: "No availability, cannot book.",
+    });
+  }
+
+  return res.json({
+    searchTimesWithTables,
+  });
 }
