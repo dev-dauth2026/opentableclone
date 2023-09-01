@@ -62,7 +62,20 @@ export default async function handler(
     });
   }
 
+  const tablesCount: { 2: number[]; 4: number[] } = {
+    2: [],
+    4: [],
+  };
+
+  searchTimeWithTables.tables.forEach((table) => {
+    if (table.seats === 2) {
+      tablesCount[2].push(table.id);
+    } else {
+      tablesCount[4].push(table.id);
+    }
+  });
+
   return res.json({
-    searchTimesWithTables,
+    tablesCount,
   });
 }
