@@ -14,7 +14,7 @@ export default function useReservation() {
     bookerLastname,
     bookerPhone,
     bookerEmail,
-    bookerOcassion,
+    bookerOccasion,
     bookerRequest,
   }: {
     slug: string;
@@ -25,7 +25,7 @@ export default function useReservation() {
     bookerLastname: string;
     bookerPhone: string;
     bookerEmail: string;
-    bookerOcassion: string;
+    bookerOccasion: string;
     bookerRequest: string;
   }) => {
     setLoading(true);
@@ -38,7 +38,7 @@ export default function useReservation() {
           bookerLastname,
           bookerPhone,
           bookerEmail,
-          bookerOcassion,
+          bookerOccasion,
           bookerRequest,
         },
         {
