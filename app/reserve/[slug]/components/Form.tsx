@@ -1,17 +1,29 @@
 "use client";
+import useReservation from "@/hooks/useReservation";
+import { CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 
-export default function Form() {
+export default function Form({
+  slug,
+  date,
+  partySize,
+}: {
+  slug: string;
+  date: string;
+  partySize: string;
+}) {
   const [inputs, setInputs] = useState({
     bookerFirstName: "",
     bookerLastname: "",
     bookerPhone: "",
     bookerEmail: "",
-    bookerOcassion: "",
+    bookerOccasion: "",
     bookerRequest: "",
   });
 
+  const [day, time] = date.split("T");
   const [disabled, setDisabled] = useState(true);
+  const { error, loading, createReservation } = useReservation();
 
   useEffect(() => {
     if (
@@ -30,6 +42,21 @@ export default function Form() {
     setInputs({
       ...inputs,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClick = async () => {
+    const booking = await createReservation({
+      slug,
+      partySize,
+      time,
+      day,
+      bookerFirstName: inputs.bookerFirstName,
+      bookerLastname: inputs.bookerLastname,
+      bookerEmail: inputs.bookerEmail,
+      bookerOccasion: inputs.bookerOccasion,
+      bookerPhone: inputs.bookerPhone,
+      bookerRequest: inputs.bookerRequest,
     });
   };
   return (
@@ -69,8 +96,8 @@ export default function Form() {
         type="text"
         className="border rounded p-3 w-80 mb-4"
         placeholder="Occasion (optional)"
-        name="bookerOcassion"
-        value={inputs.bookerOcassion}
+        name="bookerOccasion"
+        value={inputs.bookerOccasion}
         onChange={handleChangeInput}
       />
       <input
@@ -82,9 +109,15 @@ export default function Form() {
         onChange={handleChangeInput}
       />
       <button
-        disabled={disabled}
+        disabled={disabled || loading}
         className="bg-red-600 w-full p-3 text-white font-bold rounded disabled:bg-gray-300"
+        onClick={handleClick}
       >
+        {loading ? (
+          <CircularProgress color="inherit" />
+        ) : (
+          "Complete Reservation"
+        )}
         Complete reservation
       </button>
       <p className="mt-4 text-sm">
